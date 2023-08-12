@@ -12,7 +12,7 @@ export const Header = () => {
     <header className={Styles.header}>
       <div className={`contenedor ${Styles.barra}`}>
         <Link href="/">
-          <Image src="img/logo.svg" width={300} height={40} alt="Logo" />
+          <Image src="/img/logo.svg" width={300} height={40} alt="Logo" />
         </Link>
 
         <nav className={Styles.navigation}>
