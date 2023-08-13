@@ -34,12 +34,21 @@ export default Store;
 // }
 
 export async function getServerSideProps() {
-  const response = await fetch(`${process.env.API_URL}/guitarras?populate=*`);
-  const data = await response.json();
+  try {
+    const response = await fetch(`${process.env.API_URL}/guitarras?populate=*`);
+    const data = await response.json();
 
-  return {
-    props: {
-      guitarras: data.data,
-    },
-  };
+    return {
+      props: {
+        guitarras: data.data,
+      },
+    };
+  } catch (error) {
+    console.error("error", error);
+    return {
+      props: {
+        guitarras: [],
+      },
+    };
+  }
 }
